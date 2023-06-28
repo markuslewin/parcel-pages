@@ -1,0 +1,24 @@
+{
+  "name": "parcel-pages",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markuslewin/parcel-pages.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markuslewin/parcel-pages/issues"
+  },
+  "homepage": "https://github.com/markuslewin/parcel-pages#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
