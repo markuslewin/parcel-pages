@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build site
-        run: npm run build --public-url ${{ steps.pages.outputs.base_path }}
+        run: npm run build -- --public-url ${{ steps.pages.outputs.base_path }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
