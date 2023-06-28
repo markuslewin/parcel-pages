@@ -1,0 +1,40 @@
+name: Deploy Parcel site to Pages
+
+on:
+  push:
+    branches: ["parcel"]
+
+  workflow_dispatch:
+
+# todo: permissions
+# todo: concurrency
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      # - name: Setup Pages
+      - name: Install dependencies
+        run: npm install
+      - name: Build site
+        run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    # environment
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v2
